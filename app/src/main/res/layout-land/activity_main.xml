@@ -36,7 +36,6 @@
         android:id="@+id/ti1"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toStartOf="@id/guidelineRight"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@id/logo"
@@ -78,38 +77,35 @@
 
     <Button
         android:id="@+id/login"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintTop_toBottomOf="@id/ti2"
         app:layout_constraintEnd_toStartOf="@id/guidelineRight"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
         android:text="Login"
-        android:backgroundTint="@color/verde_claro"
-        android:textColor="@color/black" />
+        style="@style/ButtonFlat"/>
 
     <ImageView
         android:id="@+id/panda"
         android:layout_width="241dp"
         android:layout_height="67dp"
-        android:layout_marginTop="5dp"
         app:layout_constraintBottom_toTopOf="@id/signup"
         app:layout_constraintEnd_toStartOf="@id/guidelineRight"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@id/login"
+        app:layout_constraintTop_toBottomOf="@+id/login"
         app:srcCompat="@drawable/panda" />
 
     <Button
         android:id="@+id/signup"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/verde_oscuro"
+        android:onClick="openSignup"
+        app:strokeColor = "@color/white"
+        app:strokeWidth = "3dp"
         android:text="Signup"
-        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guidelineRight"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@id/panda" />
+        app:layout_constraintTop_toBottomOf="@id/panda"
+        style="@style/ButtonOutlined"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
