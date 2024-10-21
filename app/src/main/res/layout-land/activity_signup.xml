@@ -23,29 +23,32 @@
       android:orientation="vertical"
       app:layout_constraintGuide_percent="0.87"/>
 
+
   <ImageView
       android:id="@+id/logo"
-      android:layout_width="65dp"
-      android:layout_height="40dp"
+      android:layout_width="341dp"
+      android:layout_height="311dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@id/main"
+      android:alpha="0.3"
+      app:srcCompat="@drawable/logo" />
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/ti"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dp"
       app:layout_constraintEnd_toStartOf="@id/guidelineRight"
       app:layout_constraintStart_toStartOf="@id/guidelineLeft"
       app:layout_constraintTop_toTopOf="@id/main"
-      app:srcCompat="@drawable/logo" />
-
-
-  <com.google.android.material.textfield.TextInputLayout
-      android:id="@+id/ti1"
-      android:layout_width="0dp"
-      android:layout_height="60dp"
-      app:layout_constraintEnd_toStartOf="@id/guidelineRight"
-      app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-      app:layout_constraintTop_toBottomOf="@id/logo"
       app:startIconDrawable="@drawable/user">
 
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Username"
         android:textAlignment="textStart"
@@ -55,10 +58,33 @@
   </com.google.android.material.textfield.TextInputLayout>
 
   <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/ti1"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+
+      app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+      app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+      app:layout_constraintTop_toBottomOf="@id/ti"
+      app:startIconDrawable="@drawable/email">
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email"
+        android:textAlignment="textStart"
+        android:alpha="0.4"
+        android:background="@color/white"/>
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/ti2"
       android:layout_width="0dp"
-      android:layout_height="60dp"
-
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
       app:layout_constraintEnd_toStartOf="@id/guidelineRight"
       app:layout_constraintStart_toStartOf="@id/guidelineLeft"
       app:layout_constraintTop_toBottomOf="@id/ti1"
@@ -67,7 +93,7 @@
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Password"
         android:textAlignment="textStart"
@@ -77,34 +103,29 @@
   </com.google.android.material.textfield.TextInputLayout>
 
   <Button
-      android:id="@+id/login"
-      android:layout_marginTop="5dp"
-      app:layout_constraintTop_toBottomOf="@id/ti2"
-      app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+      android:id="@+id/signup"
+      android:onClick="openMain"
+      android:layout_width="250dp"
+      android:layout_height="wrap_content"
+      android:backgroundTint="@color/verde_claro"
+      android:text="Signup"
+      android:textColor="@color/black"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/cancel"
       app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-      android:text="Login"
-      style="@style/ButtonFlat"/>
-
-  <ImageView
-      android:id="@+id/panda"
-      android:layout_width="241dp"
-      android:layout_height="67dp"
-      app:layout_constraintBottom_toTopOf="@id/signup"
-      app:layout_constraintEnd_toStartOf="@id/guidelineRight"
-      app:layout_constraintHorizontal_bias="0.512"
-      app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-      app:layout_constraintTop_toBottomOf="@+id/login"
-      app:srcCompat="@drawable/panda" />
+      app:layout_constraintTop_toBottomOf="@id/ti2" />
 
   <Button
-      android:id="@+id/signup"
-      android:onClick="openSignup"
-      app:strokeColor = "@color/white"
-      app:strokeWidth = "3dp"
-      android:text="Signup"
+      android:id="@+id/cancel"
+      style="@style/ButtonOutlined"
+      android:layout_width="250dp"
+      android:layout_height="wrap_content"
+      android:onClick="returnLogin"
+      android:text="Cancel"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toStartOf="@id/guidelineRight"
-      app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-      app:layout_constraintTop_toBottomOf="@id/panda"
-      style="@style/ButtonOutlined"/>
-  </androidx.constraintlayout.widget.ConstraintLayout>
+      app:layout_constraintStart_toEndOf="@id/signup"
+      app:layout_constraintTop_toBottomOf="@id/ti2"
+      app:strokeColor="@color/white"
+      app:strokeWidth="3dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
