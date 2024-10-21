@@ -24,6 +24,18 @@
       app:layout_constraintGuide_percent="0.87"/>
 
   <ImageView
+      android:id="@+id/panda"
+      android:layout_width="415dp"
+      android:layout_height="162dp"
+      android:layout_marginTop="60dp"
+      app:layout_constraintBottom_toTopOf="@id/cancel"
+      app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+      app:layout_constraintHorizontal_bias="0.481"
+      app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+      app:layout_constraintTop_toBottomOf="@id/signup"
+      app:srcCompat="@drawable/panda" />
+
+  <ImageView
       android:id="@+id/logo"
       android:layout_width="171dp"
       android:layout_height="138dp"
@@ -109,19 +121,10 @@
       app:layout_constraintStart_toStartOf="@id/guidelineLeft"
       android:text="Signup"
       style="@style/ButtonFlat" />
-
-  <ImageView
-      android:id="@+id/panda"
-      android:layout_width="415dp"
-      android:layout_height="162dp"
-      android:layout_marginTop="60dp"
-      app:layout_constraintEnd_toStartOf="@id/guidelineRight"
-      app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-      app:layout_constraintBottom_toTopOf="@id/cancel"
-      app:layout_constraintTop_toBottomOf="@id/signup"
-      app:srcCompat="@drawable/panda" />
-
+  
   <Button
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
       android:id="@+id/cancel"
       android:onClick="returnLogin"
       app:strokeColor = "@color/white"
@@ -133,4 +136,5 @@
       app:layout_constraintStart_toStartOf="@id/guidelineLeft"
       app:layout_constraintTop_toBottomOf="@id/panda"
       style="@style/ButtonOutlined" />
+
   </androidx.constraintlayout.widget.ConstraintLayout>

@@ -101,6 +101,8 @@
     <Button
         android:id="@+id/signup"
         android:onClick="openSignup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:strokeColor = "@color/white"
         app:strokeWidth = "3dp"
         android:text="Signup"
