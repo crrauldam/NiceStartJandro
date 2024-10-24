@@ -6,13 +6,13 @@
 
 # Login
 
-<img loading="lazy" src="Images/Login.png" width="32%">
-<img loading="lazy" src="Images/LoginLand.png" width="67%">
+<img loading="lazy" src="Images/Login.png" width="30%">
+<img loading="lazy" src="Images/LoginLand.png" width="65%">
 
 # Signup
 
-<img loading="lazy" src="Images/Signup.png" width="32%">
-<img loading="lazy" src="Images/SignupLand.png" width="67%">
+<img loading="lazy" src="Images/Signup.png" width="30%">
+<img loading="lazy" src="Images/SignupLand.png" width="65%">
 
 
 
