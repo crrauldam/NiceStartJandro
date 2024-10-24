@@ -23,6 +23,14 @@
         app:layout_constraintGuide_percent="0.87"/>
 
     <ImageView
+        android:id="@+id/logo1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:scaleType="centerCrop"
+        android:alpha="0.1"/>
+
+    <ImageView
         android:id="@+id/logo"
         android:layout_width="65dp"
         android:layout_height="40dp"
