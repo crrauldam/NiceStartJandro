@@ -11,8 +11,8 @@
 
 # Signup
 
-<img loading="lazy" src="Images/Signup.png" width="30%">
-<img loading="lazy" src="Images/SignupLand.png" width="65%">
+<img src="Images/Signup.png" width="30%">
+<img src="Images/SignupLand.png" width="65%">
 
 
 
