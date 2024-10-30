@@ -6,9 +6,11 @@ import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -23,9 +25,21 @@ public class Splash extends AppCompatActivity {
         openApp();
 
         ImageView logosplash = findViewById(R.id.logosplash);
-
-        Animation myanim = AnimationUtils.loadAnimation(this, R.anim.blink);
+        Animation myanim = AnimationUtils.loadAnimation(this, R.anim.logo);
         logosplash.startAnimation(myanim);
+
+        ConstraintLayout fondosplash = findViewById(R.id.main);
+        Animation myanim1 = AnimationUtils.loadAnimation(this, R.anim.fondo);
+        fondosplash.startAnimation(myanim1);
+
+        TextView nicestartsplash = findViewById(R.id.textView2);
+        Animation myanim2 = AnimationUtils.loadAnimation(this, R.anim.nicestart);
+        nicestartsplash.startAnimation(myanim2);
+
+        ConstraintLayout layout = findViewById(R.id.lay);
+        Animation myanim3 = AnimationUtils.loadAnimation(this, R.anim.ampliacion);
+        layout.startAnimation(myanim3);
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -45,6 +59,6 @@ public class Splash extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
-        }, 3000);
+        }, 2900);
     }
 }

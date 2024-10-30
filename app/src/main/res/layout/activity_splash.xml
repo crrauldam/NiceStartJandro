@@ -8,36 +8,40 @@
     android:background="@drawable/gradient"
     tools:context=".Splash">
 
-    <ImageView
-        android:id="@+id/backView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/logosplash"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="308dp"
-        android:src="@drawable/logo"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay"
+        android:layout_width="353dp"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.450">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aldrich"
-        android:text="@string/app_name"
-        android:textColor="@android:color/white"
-        android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="@id/logosplash"
-        app:layout_constraintStart_toStartOf="@id/logosplash"
-        app:layout_constraintTop_toBottomOf="@id/logosplash">
+        <ImageView
+            android:id="@+id/logosplash"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </TextView>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aldrich"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="50sp"
+            app:layout_constraintEnd_toEndOf="@id/logosplash"
+            app:layout_constraintStart_toStartOf="@id/logosplash"
+            app:layout_constraintTop_toBottomOf="@id/logosplash" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
