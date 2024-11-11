@@ -15,6 +15,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
+
 public class Splash extends AppCompatActivity {
 
     @Override
@@ -39,6 +42,9 @@ public class Splash extends AppCompatActivity {
         ConstraintLayout layout = findViewById(R.id.lay);
         Animation myanim3 = AnimationUtils.loadAnimation(this, R.anim.ampliacion);
         layout.startAnimation(myanim3);
+
+
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

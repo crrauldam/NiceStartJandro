@@ -11,6 +11,8 @@
             android:duration="1000"
             android:startOffset = "2000"/>
 
+
+
 <!--    Tengo que hacer que el logo aparezca por un lado desplazandose-->
 <!--    lateralmente y de la misma manera lo hará el texto pero apareciendo-->
 <!--    desde el otro lado (PROBEMOS COMO QUEDA)-->
