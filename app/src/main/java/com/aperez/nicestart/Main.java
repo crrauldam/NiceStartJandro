@@ -40,16 +40,7 @@ public class Main extends AppCompatActivity {
 
 
 
-//        ImageView logo = findViewById(R.id.profile);
-//
-//
-//        Glide.with(this)
-//                .load("https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80")
-////                .load(R.drawable.logo)
-////                .transition(DrawableTransitionOptions.withCrossFade(2000))
-//                .circleCrop()
-////                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.white)))
-//                .into(logo);
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -98,20 +89,14 @@ public class Main extends AppCompatActivity {
         if (id == R.id.item1) {
 //            showAlertDialogButtonClicked(Main.this);
 
-            Toast toast = Toast.makeText(this, "Infecting", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, "Settings", Toast.LENGTH_SHORT);
             toast.show();
-            Intent intent = new Intent(Main.this, Login.class);
-            startActivity(intent);
 
-        }
-        if (id == R.id.item2) {
-//            Toast toast = Toast.makeText(this, "Fixing", Toast.LENGTH_SHORT);
-//            toast.show();
 
             final ConstraintLayout mLayout = findViewById(R.id.main);
 
             Snackbar snackbar = Snackbar
-                .make(mLayout, "Has la pulsado personita?", Snackbar.LENGTH_LONG);
+                    .make(mLayout, "Has la pulsado settings?", Snackbar.LENGTH_LONG);
 //                .setAction("UNDO", new View.OnClickListener() {
 //                    @Override
 //                    public void onClick(View view) {
@@ -121,6 +106,14 @@ public class Main extends AppCompatActivity {
 //                });
 
             snackbar.show();
+
+        }
+        if (id == R.id.item2) {
+            Toast toast = Toast.makeText(this, "Enviandote al profile", Toast.LENGTH_SHORT);
+            toast.show();
+            Intent intent = new Intent(Main.this, Profile.class);
+            startActivity(intent);
+
         }
 
         return super.onOptionsItemSelected(item);
