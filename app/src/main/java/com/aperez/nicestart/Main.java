@@ -7,6 +7,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,12 +19,16 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.material.snackbar.Snackbar;
 
 public class Main extends AppCompatActivity {
+
+    private WebView miVisorWeb;
+    private SwipeRefreshLayout swipeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +37,24 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        TextView mycontext = findViewById(R.id.text1);
+        WebView mycontext = findViewById(R.id.vistaweb);
         //Hago que el contextMenu salga al mantener el text1
         registerForContextMenu(mycontext);
 
+        // DENTRO del Oncreate
+        // cast al Layout SwipeRefresh con el que rodeamos la vista
+        // en el xml y le colocamos un listener
+        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.myswipe);
+        swipeLayout.setOnRefreshListener(mOnRefreshListener);
 
-
-
-
+        //La vista dentro es un webview con permiso para zoom
+        miVisorWeb = (WebView) findViewById(R.id.vistaweb);
+//        miVisorWeb.getSettings().setJavaScriptEnabled(true);
+//        miVisorWeb.getSettings().setBuiltInZoomControls(true);
+        WebSettings webSettings = miVisorWeb.getSettings();
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setUseWideViewPort(true);
+        miVisorWeb.loadUrl("https://thispersondoesnotexist.com");
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -119,21 +134,30 @@ public class Main extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    
-//    @Override
-//    public void onRefresh() {
-//        final ConstraintLayout mLayout = findViewById(R.id.main);
-//
-//        Snackbar snackbar = Snackbar
-//                .make(mLayout, "fancy a Snack while you refresh?", Snackbar.LENGTH_LONG)
-//                        .setAction("UNDO", new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View view) {
-//                                Snackbar snackbar1 = Snackbar.make(mLayout, "Action is restored!", Snackbar.LENGTH_SHORT);
-//                                snackbar1.show();
-//                            }
-//                        });
-//
-//        snackbar.show();
-//    }
+    protected SwipeRefreshLayout.OnRefreshListener
+            mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+//            Toast toast0 = Toast.makeText(Main.this, "Hi there! I don't exist :)", Toast.LENGTH_LONG);
+//            toast0.show();
+
+            final ConstraintLayout mLayout = findViewById(R.id.main);
+
+            Snackbar snackbar = Snackbar
+                .make(mLayout, "fancy a Snack while you refresh?", Snackbar.LENGTH_LONG)
+                    .setAction("UNDO", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Snackbar snackbar1 = Snackbar.make(mLayout, "Action is restored!", Snackbar.LENGTH_SHORT);
+                            snackbar1.show();
+                        }
+                    });
+
+
+            snackbar.show();
+
+            miVisorWeb.reload();
+            swipeLayout.setRefreshing(false);
+        }
+    };
 }
