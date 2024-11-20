@@ -8,6 +8,8 @@
     android:background="@drawable/gradient"
     tools:context=".Profile">
 
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineLeft"
         android:layout_width="wrap_content"
@@ -37,7 +39,6 @@
         app:layout_constraintGuide_percent="0.95"/>
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/miniLayout"
         android:layout_width="0dp"
@@ -49,6 +50,20 @@
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
         android:background="@drawable/mini_layout_shape">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:lottie_rawRes="@raw/dados"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
 
         <ImageView
             android:id="@+id/profile"

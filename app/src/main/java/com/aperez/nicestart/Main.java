@@ -1,5 +1,6 @@
 package com.aperez.nicestart;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
@@ -23,6 +25,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
 public class Main extends AppCompatActivity {
@@ -62,6 +65,60 @@ public class Main extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void showAlertDialogButtonClicked(Main mainActivity) {
+
+        // setup the alert builder
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+
+//        //el dialogo estandar tiene título/icono pero podemos sustituirlo por un XML a medida
+        builder.setTitle("Achtung!");
+        builder.setMessage("Where do you go?");
+        builder.setIcon(R.drawable.user);
+        builder.setCancelable(true);
+
+//        // un XML a medida para el diálogo
+//        builder.setView(getLayoutInflater().inflate(R.layout.alertdialog_view, null));
+
+        // add the buttons
+        builder.setPositiveButton("Go to Profile", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // do something like...
+                Toast toast = Toast.makeText(Main.this, "Enviandote al profile", Toast.LENGTH_SHORT);
+                toast.show();
+                Intent intent = new Intent(Main.this, Profile.class);
+                startActivity(intent);
+                dialog.dismiss();
+
+            }
+        });
+
+        builder.setNegativeButton("Do nothing", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                // do something like...
+
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNeutralButton("SignOut", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                // do something like...
+                System.exit(0);
+
+                dialog.dismiss();
+            }
+        });
+
+        // create and show the alert dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 
@@ -124,11 +181,7 @@ public class Main extends AppCompatActivity {
 
         }
         if (id == R.id.item2) {
-            Toast toast = Toast.makeText(this, "Enviandote al profile", Toast.LENGTH_SHORT);
-            toast.show();
-            Intent intent = new Intent(Main.this, Profile.class);
-            startActivity(intent);
-
+            showAlertDialogButtonClicked(Main.this);
         }
 
         return super.onOptionsItemSelected(item);
