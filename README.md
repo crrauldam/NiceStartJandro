@@ -32,10 +32,10 @@ Animation myanim3 = AnimationUtils.loadAnimation(this, R.anim.ampliacion);
         layout.startAnimation(myanim3);
 ```
 
-<img loading="lazy" src="Images/SplashZoom1.png" width="24%">
-<img loading="lazy" src="Images/SplashZoom2.png" width="24%">
-<img loading="lazy" src="Images/SplashZoom3.png" width="24%">
-<img loading="lazy" src="Images/SplashZoom4.png" width="24%">
+<img loading="lazy" src="Images/SplashZoom1.png" width="24%"> <img loading="lazy" src="Images/SplashZoom2.png" width="24%"> <img loading="lazy" src="Images/SplashZoom3.png" width="24%"> <img loading="lazy" src="Images/SplashZoom4.png" width="24%">
+
+
+
 
 
 ## Login
@@ -74,8 +74,9 @@ Animation myanim3 = AnimationUtils.loadAnimation(this, R.anim.ampliacion);
 
 ### SwipeRefresh (WebView)
 
-<img loading="lazy" src="Images/Refresh1.png" width="30%">
-<img loading="lazy" src="Images/Refresh2.png" width="30%">
+<img loading="lazy" src="Images/Refresh2.png" width="30%"> <img loading="lazy" src="Images/Refresh1.png" width="30%">
+
+
 
 ### ContextMenu
 
