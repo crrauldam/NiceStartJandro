@@ -8,7 +8,7 @@
 
 *[Gradient](app/src/main/res/drawable/gradient.xml)
 
-<img loading="lazy" src="Images/Splash.png" width="30%">
+<img loading="lazy" src="Images/Splash.png" width="30%"> 
 
 ### Splash Animation (Zoom)
 
@@ -33,9 +33,9 @@ Animation myanim3 = AnimationUtils.loadAnimation(this, R.anim.ampliacion);
 ```
 
 <img loading="lazy" src="Images/SplashZoom1.png" width="24%"> <img loading="lazy" src="Images/SplashZoom2.png" width="24%"> <img loading="lazy" src="Images/SplashZoom3.png" width="24%"> <img loading="lazy" src="Images/SplashZoom4.png" width="24%">
-
-
-
+<div align="center">
+    <img  src="Images/SplashGif.gif" width="37%">
+</div>
 
 
 ## Login
@@ -117,7 +117,7 @@ Snackbar snackbar = Snackbar
 * [MainView Java](app/src/main/java/com/aperez/nicestart/Profile.java)
 * [MainView XML](app/src/main/res/layout/activity_profile.xml)
 
-<img loading="lazy" src="Images/Profile.png" width="30%">
+<img loading="lazy" src="Images/Profile.png" width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img loading="lazy" src="Images/LottieAnimationGif.gif" width="30%"> 
 
 ### LottieAnimations
 
